@@ -1,5 +1,67 @@
-$bgColor: rgb(47, 148, 146);
+@use '_hero';
 
-body{
-    background-color:$bgColor;
+@font-face {
+    font-family:OpenSans;
+    src:url(../../assets/fonts/OpenSans_Condensed-Medium.ttf);
+    font-weight:500;
+}
+
+@font-face {
+    font-family:Poppins;
+    src:url(../../assets/fonts/Poppins-Light.ttf);
+    font-weight:300;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+$corDePrimeirofundo:#070416;
+$corDePrimeiroTitulo:#FFFF;
+$corDeSegundoTitulo:#ffff;
+$corDeParagrafo:#ffff;
+$corDePrimeiroLink:#C3B9F5;
+
+
+html,body{
+    height:100%;
+    background-color:$corDePrimeirofundo;
+}
+@mixin text($fontSize:17px) {
+    font-size:$fontSize;
+    line-height:calc(#{$fontSize} + 5px);
+    color:$corDeParagrafo;
+    font-family:OpenSans,sans-serif;
+}
+.text--big {
+    @include text(26px);
+}
+
+.text {
+     @include text;
+}
+
+.text--small {
+     @include text(18px);
+}
+
+@mixin titulo($fontSize: 23px) {
+  font-size: $fontSize;
+  line-height: calc(#{$fontSize} + 5px); // interpolação + calc()
+  color: $corDePrimeiroTitulo;
+   font-family:Poppins;
+}
+.titulo {
+    @include titulo; 
+}
+.titulo-big {
+    @include text(41px);
+}
+.titulo-small {
+    @include text(18px);
+}
+.titulo-link {
+    @include text(27px);
+    color:$corDePrimeiroLink;
 }
