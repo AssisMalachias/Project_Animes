@@ -1,0 +1,42 @@
+@use'_variable' as v;
+.shows {
+     padding:2vw 5.6vw;
+    &__list {
+         display:none;
+         grid-template-columns:repeat(3, 1fr);
+         gap:24px;
+         list-style:none;  
+         
+         &--is-active {
+            display:grid;
+         }
+    }
+     &__item{
+            img {
+                max-width:100%;
+                border-radius:8px;
+                object-fit:cover;
+            }
+        }
+
+     .show__tabs {
+        display:flex;
+        justify-content: center;
+        margin-bottom:24px;
+
+          &__button {
+             color:v.$corDePrimeiroTitulo;
+             background:none;
+             border:none;
+             padding-bottom:5px;
+             font-size:20px;
+             text-transform:uppercase;
+             margin:0 1vw;
+             cursor: pointer;
+        }
+       
+     }
+      .show__tabs__button--is-active {
+             border-bottom:5px solid v.$corDePrimeiroLink;
+        }
+}

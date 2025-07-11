@@ -1,4 +1,6 @@
 @use '_hero';
+@use '_shows';
+@use '_variable';
 
 @font-face {
     font-family:OpenSans;
@@ -17,21 +19,16 @@
     padding:0;
     box-sizing:border-box;
 }
-$corDePrimeirofundo:#070416;
-$corDePrimeiroTitulo:#FFFF;
-$corDeSegundoTitulo:#ffff;
-$corDeParagrafo:#ffff;
-$corDePrimeiroLink:#C3B9F5;
 
 
 html,body{
     height:100%;
-    background-color:$corDePrimeirofundo;
+    background-color:variable.$corDePrimeirofundo;
 }
 @mixin text($fontSize:17px) {
     font-size:$fontSize;
     line-height:calc(#{$fontSize} + 5px);
-    color:$corDeParagrafo;
+    color:variable.$corDeParagrafo;
     font-family:OpenSans,sans-serif;
 }
 .text--big {
@@ -49,7 +46,7 @@ html,body{
 @mixin titulo($fontSize: 23px) {
   font-size: $fontSize;
   line-height: calc(#{$fontSize} + 5px); // interpolação + calc()
-  color: $corDePrimeiroTitulo;
+  color:variable.$corDePrimeiroTitulo;
    font-family:Poppins;
 }
 .titulo {
@@ -63,5 +60,5 @@ html,body{
 }
 .titulo-link {
     @include text(27px);
-    color:$corDePrimeiroLink;
+    color:variable.$corDePrimeiroLink;
 }
