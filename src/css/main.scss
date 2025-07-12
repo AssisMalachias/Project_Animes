@@ -1,6 +1,7 @@
 @use '_hero';
 @use '_shows';
-@use '_variable';
+@use '_variable' as v;
+@use '_plans';
 
 @font-face {
     font-family:OpenSans;
@@ -23,12 +24,12 @@
 
 html,body{
     height:100%;
-    background-color:variable.$corDePrimeirofundo;
+    background-color:v.$corDePrimeirofundo;
 }
 @mixin text($fontSize:17px) {
     font-size:$fontSize;
     line-height:calc(#{$fontSize} + 5px);
-    color:variable.$corDeParagrafo;
+    color:v.$corDeParagrafo;
     font-family:OpenSans,sans-serif;
 }
 .text--big {
@@ -46,7 +47,7 @@ html,body{
 @mixin titulo($fontSize: 23px) {
   font-size: $fontSize;
   line-height: calc(#{$fontSize} + 5px); // interpolação + calc()
-  color:variable.$corDePrimeiroTitulo;
+  color:v.$corDePrimeiroTitulo;
    font-family:Poppins;
 }
 .titulo {
@@ -60,5 +61,15 @@ html,body{
 }
 .titulo-link {
     @include text(27px);
-    color:variable.$corDePrimeiroLink;
+    color:v.$corDePrimeiroLink;
 }
+
+.hero__btn{
+        margin-bottom:10px;
+         text-align: center;
+        border:none;
+        width:223px;
+        height:54px;
+        background-color:#1B0975;
+        cursor: pointer;
+    }
