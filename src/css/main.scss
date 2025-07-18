@@ -6,6 +6,7 @@
 @use '_available-devices';
 @use '_faq';
 @use '_footer';
+@use '_header';
 
 @font-face {
     font-family:OpenSans;
@@ -27,14 +28,14 @@
 
 
 html,body{
-    height:100%;
-    background-color:v.$corDePrimeirofundo;
+     height:100%;
+     background-color:v.$corDePrimeirofundo;
 }
 @mixin text($fontSize:17px) {
-    font-size:$fontSize;
-    line-height:calc(#{$fontSize} + 5px);
-    color:v.$corDeParagrafo;
-    font-family:OpenSans,sans-serif;
+     font-size:$fontSize;
+     line-height:calc(#{$fontSize} + 5px);
+     color:v.$corDeParagrafo;
+     font-family:OpenSans,sans-serif;
 }
 .text--big {
     @include text(26px);
@@ -49,10 +50,10 @@ html,body{
 }
 
 @mixin titulo($fontSize: 23px) {
-  font-size: $fontSize;
-  line-height: calc(#{$fontSize} + 5px); // interpolação + calc()
-  color:v.$corDePrimeiroTitulo;
-   font-family:Poppins;
+     font-size: $fontSize;
+     line-height: calc(#{$fontSize} + 5px); // interpolação + calc()
+     color:v.$corDePrimeiroTitulo;
+     font-family:Poppins;
 }
 .titulo {
     @include titulo; 
@@ -69,11 +70,35 @@ html,body{
 }
 
 .hero__btn{
-        margin-bottom:10px;
          text-align: center;
-        border:none;
-        width:223px;
-        height:54px;
-        background-color:#1B0975;
-        cursor: pointer;
-    }
+         border:none;
+         width:223px;
+         height:54px;
+         color:v.$corDePrimeiroTitulo;
+         background-color:v.$corDeFundoBotaoPrimario;
+         cursor: pointer;
+
+         &:hover {
+                background-color: lighten(v.$corDeFundoBotaoPrimario, 3%);
+        }
+}
+.hero__btn--secondary {
+             background-color:v.$corDeFundoBotaoSegundario;
+             border-color:v.$corDeFundoBotaoPrimario;
+             padding:8px 14px;
+             margin-left:5px;
+
+             &:hover {
+                background-color: lighten(v.$corDeFundoBotaoSegundario, 3%);
+             }
+}
+.hero__btn--dark {
+             background-color:v.$corDeFundoBotaoDark;
+             border:1px solid v.$corDePrimeiroTitulo;
+             padding: 8px 14px;
+
+              &:hover {
+                background-color: lighten(v.$corDeFundoBotaoDark, 3%);
+             }
+
+}

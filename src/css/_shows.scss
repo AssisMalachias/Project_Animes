@@ -1,6 +1,7 @@
 @use'_variable' as v;
 .shows {
      padding:2vw 5.6vw;
+     z-index:1;
     &__list {
          display:none;
          grid-template-columns:repeat(3, 1fr);
